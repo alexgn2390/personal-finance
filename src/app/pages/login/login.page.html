@@ -1,41 +1,41 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header>
 
 <ion-content [fullscreen]="true">
-  <div class="login-welcome-row">
-    <ion-img class="login-welcome" src="../../../assets/images/login_page.jpg" alt="login_page" />
-    <ion-title>LogIn!</ion-title>
-  </div>
 
-  <div class="centering">
-    <form class="my-form">
-      <ion-item class="text-field">
-        <ion-label for="email">Email:</ion-label>
-        <ion-input type="email" id="email" name="email" placeholder="Your Email"/>
-        <img alt="Email Icon" title="Email Icon" src="../../../assets/images/email.svg"
-        >
+  <form>
+
+    <div class="ion-padding">
+      <div class="login-welcome-row">
+        <ion-img  class="login-welcome" src="../../../assets/images/login_page.jpg" alt="login_page" />
+      </div>
+
+      <ion-item>
+        <ion-input type="email" id="email" name="email" placeholder="Email"/>
+        <ion-img alt="Email Icon" src="../../../assets/images/email.svg"/>
       </ion-item>
-      <ion-item class="text-field">
-        <label for="password">Password:</label>
-        <input id="password" type="password" name="password" placeholder="Your Password">
-        <img alt="Password Icon" title="Password Icon" src="../../../assets/images/password.svg">
+      <ion-item>
+        <ion-input id="password" type="password" name="password" placeholder="Password"/>
+        <ion-img alt="Password Icon" title="Password Icon" src="../../../assets/images/password.svg"/>
       </ion-item>
 
-      <input type="submit" class="my-form__button" value="Login">
       <div class="my-form__actions">
         <div class="my-form__row">
-          <span>Did you forget your password?</span>
-          <a href="#" title="Reset Password">Reset Password</a>
+          <p>Did you forget your password?</p>
+          <a [routerLink]="['/reset-password']" >Reset Password</a>
         </div>
         <div class="my-form__signup">
-          <a href="#" title="Create Account">Create Account</a>
+          <a [routerLink]="['/signup']">Create Account</a>
         </div>
       </div>
-    </form>
-  </div>
+    </div>
+
+    <ion-fab vertical="bottom" horizontal="end">
+      <ion-fab-button [routerLink]="['/home']">
+        <ion-icon name="chevron-forward"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </form>
+
+
 
 </ion-content>
 

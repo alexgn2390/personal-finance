@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+
+$primary: #DD946F;
+
+
+ion-content {
+  --background: #f8edd9;
+
+  .ion-padding {
+    .login-welcome-row {
+      margin-top: 100px;
+      margin-bottom: 16px;
+      text-align: center;
+
+      ion-img {
+        width: 180px;
+        height: 180px;
+        display: inline-block;
+      }
+    }
+
+
+    ion-item {
+      --ion-background-color: #f8edd9;
+      border-radius: 10px;
+      margin-bottom: 16px;
+
+      ion-input {
+        height: 50px;
+      }
+
+      ion-img {
+        width: 32px;
+        height: 32px;
+      }
+    }
+
+    .my-form__actions {
+      margin-top: 30px;
+      text-align: center;
+
+      .my-form__row {
+        margin-bottom: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        p {
+          max-width: 220px;
+          min-width: 120px;
+          margin: 0;
+          text-align: left;
+        }
+
+        a {
+          font-weight: 600;
+          color: $primary
+        }
+      }
+
+      .my-form__signup a {
+        font-weight: 600;
+        font-size: 20px;
+        color: $primary;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+
+ion-fab-button {
+  --background: #f3961e;
+  --background-activated: #87d361;
+  --background-hover: #a3e681;
+  --border-radius: 15px;
+  --box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  --color: black;
+  width: 90px;
+}
