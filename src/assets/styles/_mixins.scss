@@ -1,0 +1,10 @@
+@mixin fab-button-green {
+  --background: #00A678;
+  --background-activated: #017246;
+  --background-hover: #017246;
+  --border-radius: 15px;
+  outline: none;
+  --box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  --color: black;
+  width: 90px;
+}

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "personal-finance-742c9": {
+      "hosting": {
+        "app": [
+          "personal-finance-742c9"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "personal-finance-742c9"
+  }
+}
