@@ -1,25 +1,49 @@
-
 <ion-content [fullscreen]="true">
-  <form>
-    <div class="ion-padding">
-      <div class="header">
-        <ion-title class="title">Welcome</ion-title>
-        <p>Sign Up to create your account</p>
-      </div>
-
+  <ion-icon class="arrow-back" name="arrow-back" (click)="goBack()"></ion-icon>
+  <form [formGroup]="regForm">
+    <div class="container">
+        <ion-title class="title">Registration</ion-title>
       <ion-item>
-        <ion-input type="name" id="name" name="name" placeholder="Name"/>
+        <ion-input type="name" id="name" name="name" placeholder="Name" formControlName="fullName"/>
         <ion-img alt="Name Icon" src="../../../assets/images/avatar-icon.svg"/>
       </ion-item>
+      <ion-text class="input-invalid" *ngIf="regForm.get('fullName')?.invalid
+              && (regForm.get('fullName')?.dirty || regForm.get('fullName')?.touched)
+               && regForm.get('fullName')?.errors?.['required']">
+        Fullname is required
+      </ion-text>
       <ion-item>
-        <ion-input type="email" id="email" name="email" placeholder="Email"/>
+        <ion-input type="email" id="email" placeholder="Email" formControlName="email"/>
         <ion-img alt="Email Icon" src="../../../assets/images/email.svg"/>
       </ion-item>
+      <ion-text class="input-invalid" *ngIf="regForm.get('email')?.invalid
+              && (regForm.get('email')?.dirty || regForm.get('email')?.touched)
+               && regForm.get('email')?.errors?.['required']">
+        Email is required
+      </ion-text>
+      <ion-text  class="input-invalid" *ngIf="regForm.get('email')?.errors?.['pattern']">
+        Email should be valid
+      </ion-text>
       <ion-item>
-        <ion-input id="password" type="password" name="password" placeholder="Password"/>
+        <ion-input id="password" type="password"  placeholder="Password" formControlName="password"/>
         <ion-img alt="Password Icon" title="Password Icon" src="../../../assets/images/password.svg"/>
       </ion-item>
-
+      <ion-text class="input-invalid" *ngIf="regForm.get('password')?.invalid
+              && (regForm.get('password')?.dirty || regForm.get('password')?.touched)
+               && regForm.get('password')?.errors?.['required']">
+        Password is required
+      </ion-text>
+      <ion-text class="input-invalid" *ngIf="regForm.get('password')?.errors?.['pattern']">
+        Password must atleast have
+        <br>
+        One character
+        <br>
+        One capital letter
+        <br>
+        One number
+        <br>
+        Contain 8 digit
+      </ion-text>
       <div class="my-form__actions">
         <div class="my-form__row">
           <p>Already a member?</p>
@@ -29,7 +53,7 @@
     </div>
 
     <ion-fab vertical="bottom" horizontal="end">
-      <ion-fab-button [routerLink]="['/home']">
+      <ion-fab-button (click)="signUp()">
         <ion-icon name="chevron-forward"></ion-icon>
       </ion-fab-button>
     </ion-fab>

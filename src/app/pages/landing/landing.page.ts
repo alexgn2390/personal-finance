@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Location} from "@angular/common";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-landing',
@@ -11,5 +13,7 @@ export class LandingPage implements OnInit {
 
   ngOnInit() {
   }
+
+
 
 }

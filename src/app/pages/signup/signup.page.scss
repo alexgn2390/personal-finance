@@ -1,33 +1,41 @@
-@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+
 @import "../../../assets/styles/mixins";
 
 $primary: #DD946F;
 
-* {
-  font-family: Mulish;
-}
+
 
 ion-content {
   --background: linear-gradient(to right, #6633A9 0%, #5833A5 50%, #4B32A7 100%);
+  .arrow-back {
+    position: absolute;
+    font-size: 30px;
+    color: #f8edd9;
+    padding: 10px 10px 10px 10px;
+    border-radius: 50%;
+    left: 10px;
+    top: 10px;
+  }
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-top: 160px;
 
-  .ion-padding {
-    .header {
-      margin-top: 100px;
-      text-align: center;
-      color: #f8edd9;
       .title {
         padding: 0;
         position: static;
         letter-spacing: 1.5px;
         font-size: 25px;
+        color: #f8edd9;
+        margin-bottom: 25px;
       }
-    }
+
 
 
     ion-item {
       --background: linear-gradient(to right, #6633A9 0%, #5833A5 50%, #4B32A7 100%);
       //--ion-background-color: #f8edd9;
-      margin-bottom: 16px;
+      margin-bottom: 6px;
       position: relative;
       --padding-end: 0;
       --padding-start: 0;
@@ -38,6 +46,7 @@ ion-content {
       }
 
       ion-input {
+        appearance: none;
         height: 30px;
         outline: 0;
         vertical-align: middle;
@@ -47,9 +56,7 @@ ion-content {
         --padding-start: 10px;
         --padding-top: 10px;
         --color: #CD7D7C;
-
       }
-
 
       ion-img {
         width: 32px;
@@ -66,7 +73,7 @@ ion-content {
         display: flex;
         justify-content: center;
         align-items: center;
-
+        letter-spacing: 1px;
         p {
           max-width: 238px;
           min-width: 120px;
@@ -81,12 +88,6 @@ ion-content {
         }
       }
 
-      .my-form__signup a {
-        font-weight: 600;
-        font-size: 32px;
-        color: $primary;
-        text-decoration: none;
-      }
     }
   }
 }
@@ -96,5 +97,7 @@ ion-fab-button {
   @include fab-button-green
 }
 
-
+.input-invalid {
+  color: #d70808;
+}
 

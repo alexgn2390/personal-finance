@@ -1,0 +1,89 @@
+$primary: #DD946F;
+
+ion-content {
+  --background: linear-gradient(to right, #6633A9 0%, #5833A5 50%, #4B32A7 100%);
+  --padding-top: 110px;
+
+  .arrow-back {
+    position: absolute;
+    font-size: 30px;
+    color: #f8edd9;
+    padding: 10px 10px 10px 10px;
+    border-radius: 50%;
+    left: 10px;
+    top: 10px;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .image-pig {
+      width: 220px;
+      height: 220px;
+      margin-bottom: 120px;
+    }
+
+    ion-button {
+      --padding-top: 5px;
+      --padding-bottom: 5px;
+      text-align: left;
+      --padding-start: 0;
+      --padding-end: 0;
+      border: 0;
+      --border-radius: 30px;
+      font-size: 20px;
+      width: 250px;
+      min-height: 50px;
+
+
+      ion-img {
+        width: 26px;
+        height: 26px;
+      }
+    }
+
+    .ion-button-blue {
+      --background: #50C8FF;
+      --box-shadow: 0 8px 1px 0 rgba(39, 164, 248, 0.60);
+      margin-bottom: 15px;
+
+    }
+
+    .ion-button-success {
+      --background: #42D77D;
+      --box-shadow: 0 8px 1px 0 rgba(66, 215, 125, 0.60);
+    }
+
+    .my-form__actions {
+      margin-top: 150px;
+      text-align: center;
+
+      .my-form__row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        letter-spacing: 1px;
+        p {
+          max-width: 238px;
+          min-width: 120px;
+          text-align: left;
+          color: #f8edd9;
+          margin-right: 25px;
+        }
+
+        a {
+          font-weight: 600;
+          color: $primary
+        }
+      }
+
+    }
+  }
+
+
+}
+
+

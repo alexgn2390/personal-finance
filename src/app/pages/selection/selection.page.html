@@ -1,0 +1,25 @@
+<ion-content [fullscreen]="true">
+
+  <ion-icon class="arrow-back" name="arrow-back" (click)="goBack()"></ion-icon>
+  <div class="container">
+    <ion-img class="image-pig" src="../../../assets/images/login_page.png" alt="pig_home"/>
+    <ion-button (click)="signInWithGoogle()" class="ion-button-blue" >
+      <ion-img alt="google" src="../../../assets/images/google-color-icon.svg"/>
+      oogle
+      <ion-icon slot="end" name="arrow-forward"></ion-icon>
+    </ion-button>
+    <ion-button [routerLink]="['/signup']" class="ion-button-success">
+      Registration
+      <ion-icon slot="end" name="arrow-forward"></ion-icon>
+    </ion-button>
+    <div class="my-form__actions">
+      <div class="my-form__row">
+        <p>Already a member?</p>
+        <a [routerLink]="['/login']">SignIn Now</a>
+      </div>
+    </div>
+  </div>
+
+
+</ion-content>
+
