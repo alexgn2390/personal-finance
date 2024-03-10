@@ -1,11 +1,200 @@
+<ion-header>
+  <ion-item lines="none">
+    <ion-menu-button slot="end"><img src="assets/images/menu.png"></ion-menu-button>
+  </ion-item>
+</ion-header>
+
 
 <ion-content [fullscreen]="true">
 
-  <div id="container">
-    <p>
-      HOME
-    </p>
+  <div class="main-header">
 
   </div>
 
+  <div class="container">
+    <ion-grid class="grid" [fixed]="true">
+      <ion-col class="one">
+        <ion-row>
+          <ion-col class="label-text">
+            Продукты
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="label-ion-col">
+            <div class="icon-border" [style.border-color]="selectedColor">
+              <img src="../../assets/images/house.svg" class="label-image" alt="house"
+                   >
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row class="label-text">
+          <ion-col [style.color]="selectedColor">
+            564587787
+          </ion-col>
+        </ion-row>
+      </ion-col>
+
+      <!--      <ion-col class="two">-->
+      <!--        <ion-row>-->
+      <!--          <ion-col class="label-text">-->
+      <!--            Транспорт-->
+      <!--          </ion-col>-->
+      <!--        </ion-row>-->
+      <!--        <ion-row>-->
+      <!--          <ion-col class="label-ion-col">-->
+      <!--            <img src="../../assets/images/house.svg" class="label-image" alt="house" >-->
+      <!--          </ion-col>-->
+      <!--        </ion-row>-->
+      <!--        <ion-row >-->
+      <!--          <ion-col class="label-text">-->
+      <!--            0-->
+      <!--          </ion-col>-->
+      <!--        </ion-row>-->
+      <!--      </ion-col>-->
+      <!--      <ion-col class="three">-->
+      <!--        <ion-row>-->
+      <!--          <ion-col class="label-text">-->
+      <!--            Досуг-->
+      <!--          </ion-col>-->
+      <!--        </ion-row>-->
+      <!--        <ion-row>-->
+      <!--          <ion-col class="label-ion-col">-->
+      <!--            <img src="../../assets/images/house.svg" class="label-image" alt="house" >-->
+      <!--          </ion-col>-->
+      <!--        </ion-row>-->
+      <!--        <ion-row class="label-text">-->
+      <!--          <ion-col>-->
+      <!--            0-->
+      <!--          </ion-col>-->
+      <!--        </ion-row>-->
+      <!--      </ion-col>-->
+      <!--      <ion-col class="four">-->
+      <!--        <ion-row>-->
+      <!--          <ion-col class="label-text">-->
+      <!--            Продукты-->
+      <!--          </ion-col>-->
+      <!--        </ion-row>-->
+      <!--        <ion-row>-->
+      <!--          <ion-col class="label-ion-col">-->
+      <!--            <img src="../../assets/images/house.svg" class="label-image" alt="house" >-->
+      <!--          </ion-col>-->
+      <!--        </ion-row>-->
+      <!--        <ion-row class="label-text">-->
+      <!--          <ion-col>-->
+      <!--            0-->
+      <!--          </ion-col>-->
+      <!--        </ion-row>-->
+      <!--      </ion-col>-->
+      <!--      <ion-col class="five">5</ion-col>-->
+      <ion-col class="six">
+        <div class="canvas-container">
+          <canvas class="canvas" #myChart></canvas>
+        </div>
+      </ion-col>
+      <!--      <ion-col class="seven">7</ion-col>-->
+      <!--      <ion-col class="eight">8</ion-col>-->
+      <!--      <ion-col class="ten">10</ion-col>-->
+      <!--      <ion-col class="eleven">11</ion-col>-->
+      <!--      <ion-col class="twenteen">12</ion-col>-->
+      <!--      <ion-col class="thirteen">13</ion-col>-->
+      <!--      <ion-col class="fourteen">14</ion-col>-->
+
+
+
+          <ion-col class="two label-ion-col" (click)="openModalAddCategory()">
+            <div class="icon-border">
+              <svg width="15" height="16" viewBox="0 0 15 16" fill="none"
+                   xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M14.5469 6.08984V9.05664H0.902344V6.08984H14.5469ZM9.32422 0.511719V15.0039H6.13867V0.511719H9.32422Z"
+                  fill="#CED4DA"/>
+              </svg>
+            </div>
+          </ion-col>
+
+    </ion-grid>
+  </div>
+
+
+  <ion-fab vertical="bottom" horizontal="start">
+    <ion-fab-button class="add-income-button-plus" (click)="openModalAddCount()">
+      <img src="../../assets/images/plus.png" alt="plus">
+      <!--      <div class="add-income-plus"></div>-->
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-fab vertical="bottom" horizontal="end">
+    <ion-fab-button class="add-expense-button-minus" (click)="openModalColorIcons()">
+      <img src="../../assets/images/minus.png" alt="plus">
+
+      <!--      <div class="add-expense-minus"></div>-->
+    </ion-fab-button>
+  </ion-fab>
+
+
+  <ion-modal #modalOpenColorIcons >
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Modal</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="closeModalColorIcons()">Close</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <div class="ion-padding blockColorIcons">
+        <ion-grid class="gridModal">
+          <ion-row *ngFor="let color of colorArray">
+            <ion-col class="color-ion"  [style.background]="color" (click)="selectedColor = color"></ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+      <ion-footer>
+        <ion-toolbar>
+          <ion-buttons>
+            <ion-button (click)="closeModalColorIcons()">Отмена</ion-button>
+            <ion-button (click)="changeColorCategory(selectedColor)">Готово</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-footer>
+    </ng-template>
+  </ion-modal>
+
+
+  <!--  МОДАЛЬНОЕ ОКНО ДЛЯ ВВДЕНИЯ СУММЫ РАСХОДА/ДОХОДА-->
+  <ion-modal #modalOpenAddCount [initialBreakpoint]="1" [breakpoints]="[0, 1]">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Modal</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="closeModalAddCount()">Close</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <div class="ion-padding block">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni illum quidem recusandae ducimus quos
+          reprehenderit. Veniam, molestias quos, dolorum consequuntur nisi deserunt omnis id illo sit cum qui. Eaque,
+          dicta.
+        </p>
+      </div>
+    </ng-template>
+  </ion-modal>
+
+
+  <ion-modal #modalAddCategory trigger="open-modal" [enterAnimation]="enterAnimation" [leaveAnimation]="leaveAnimation">
+    <ng-template>
+      <ion-header>
+        
+      </ion-header>
+      <ion-content>
+
+      </ion-content>
+      <ion-footer>
+
+      </ion-footer>
+    </ng-template>
+  </ion-modal>
 </ion-content>

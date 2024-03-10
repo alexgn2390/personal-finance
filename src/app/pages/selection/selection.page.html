@@ -1,4 +1,4 @@
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" >
 
   <ion-icon class="arrow-back" name="arrow-back" (click)="goBack()"></ion-icon>
   <div class="container">
@@ -8,7 +8,7 @@
       oogle
       <ion-icon slot="end" name="arrow-forward"></ion-icon>
     </ion-button>
-    <ion-button [routerLink]="['/signup']" class="ion-button-success">
+    <ion-button (click)="goForward()" class="ion-button-success">
       Registration
       <ion-icon slot="end" name="arrow-forward"></ion-icon>
     </ion-button>

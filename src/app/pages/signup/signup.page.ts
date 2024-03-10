@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {LoadingController} from "@ionic/angular";
+import {LoadingController, NavController} from "@ionic/angular";
 import {AuthService} from "../../service/auth.service";
 import {Router} from "@angular/router";
 import {MatSnackBar} from "@angular/material/snack-bar";
@@ -24,6 +24,7 @@ export class SignupPage implements OnInit {
               private authService: AuthService,
               private router: Router,
               private _snackBar: MatSnackBar,
+              private navCtrl: NavController,
               private location: Location) {
   }
 
@@ -32,8 +33,13 @@ export class SignupPage implements OnInit {
   }
 
   goBack() {
-    const previousUrl = this.location.getState() as string;
-    this.router.navigateByUrl(previousUrl);
+    this.navCtrl.pop();
+  }
+
+  goForward() {
+    this.navCtrl.navigateForward('/login', {
+      animationDirection: 'forward',
+    });
   }
 
   get errorControl() {

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Location} from "@angular/common";
 import {Router} from "@angular/router";
+import {NavController} from "@ionic/angular";
 
 @Component({
   selector: 'app-login',
@@ -9,13 +10,20 @@ import {Router} from "@angular/router";
 })
 export class LoginPage implements OnInit {
 
-  constructor(private location: Location,
-              private router: Router) { }
+  constructor(private navCtrl: NavController) { }
 
   ngOnInit() {
   }
   goBack() {
-    const previousUrl = this.location.getState() as string;
-    this.router.navigateByUrl(previousUrl);
+    // this.navCtrl.navigateBack('/signup', {
+    //   animationDirection: 'back',
+    // });
+    this.navCtrl.pop();
+  }
+
+  goForward() {
+    this.navCtrl.navigateForward('/signup', {
+      animationDirection: 'forward',
+    });
   }
 }

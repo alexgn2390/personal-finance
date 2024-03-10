@@ -13,6 +13,7 @@ import {MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBarModule} from "@angular/materia
 import {MatMenuModule} from "@angular/material/menu";
 
 
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -23,7 +24,7 @@ import {MatMenuModule} from "@angular/material/menu";
     IonicModule.forRoot(),
     AppRoutingModule, provideFirebaseApp(() => initializeApp({"projectId":"personal-finance-742c9","appId":"1:898143746087:web:8e43a39fd69b1d1295f602","storageBucket":"personal-finance-742c9.appspot.com","apiKey":"AIzaSyAGo2gVnqeah5nw12Z8XqhxkE2dcPh7eJ4","authDomain":"personal-finance-742c9.firebaseapp.com","messagingSenderId":"898143746087","measurementId":"G-KF6C9VJ85M"})), provideAuth(() => getAuth())],
   providers: [
-    {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 9999999}},
+    {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2500}},
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     { provide: FIREBASE_OPTIONS, useValue: environment.firebaseConfig }
   ],

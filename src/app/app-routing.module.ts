@@ -31,6 +31,10 @@ const routes: Routes = [
     path: 'selection',
     loadChildren: () => import('./pages/selection/selection.module').then( m => m.SelectionPageModule)
   },
+  {
+    path: 'modal-window',
+    loadChildren: () => import('./pages/modal-window/modal-window.module').then( m => m.ModalWindowPageModule)
+  },
 ];
 
 @NgModule({
